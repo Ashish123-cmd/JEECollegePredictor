@@ -1,0 +1,634 @@
+/* ─────────────────────────────────────────
+   HOME PAGE — CollegeSearchPortal
+   All 7 sections
+───────────────────────────────────────── */
+
+/* ── Tokens ── */
+:root {
+  --teal: #1d9e75;
+  --teal-light: #e1f5ee;
+  --teal-dark: #085041;
+  --teal-mid: #0f6e56;
+  --amber-light: #faeeda;
+  --amber-dark: #633806;
+  --blue-light: #e6f1fb;
+  --blue-dark: #0c447c;
+  --purple-light: #eeedfe;
+  --purple-dark: #3c3489;
+  --coral-light: #faece7;
+  --coral-dark: #712b13;
+  --red-light: #fcebeb;
+  --red-dark: #791f1f;
+  --green-light: #eaf3de;
+  --green-dark: #27500a;
+
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b6b6b;
+  --text-hint: #9a9a9a;
+  --border: #e5e5e5;
+  --border-strong: #cccccc;
+  --bg-surface: #f7f7f5;
+  --bg-white: #ffffff;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+}
+
+/* ── Announcement bar ── */
+.top-announce {
+  background: var(--teal);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  padding: 8px 16px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Nav ── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.menu-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
+.logo { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.nav-links { display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; }
+.nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color .15s; }
+.nav-links a:hover { color: var(--teal); }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.user-greeting { font-size: 14px; color: var(--text-secondary); }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background .15s, color .15s;
+  font-weight: 500;
+}
+.btn:hover { background: var(--bg-surface); }
+.btn.primary {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+.btn.primary:hover { background: var(--teal-mid); border-color: var(--teal-mid); }
+.btn.ghost { background: transparent; }
+.btn.select { width: 100%; margin-top: auto; }
+
+/* ─────────────────────────────────────────
+   SECTION 1 — Hero
+───────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 64px 24px 48px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 18px;
+}
+
+.hero-heading {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.hero-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-search {
+  display: flex;
+  gap: 10px;
+  max-width: 640px;
+  margin: 0 auto 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rank-input,
+.rank-select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  outline: none;
+  transition: border-color .15s;
+}
+.rank-input { flex: 2; min-width: 160px; }
+.rank-select { flex: 1; min-width: 120px; }
+.rank-input:focus,
+.rank-select:focus { border-color: var(--teal); }
+
+.hero-cta { height: 44px; flex: 1; min-width: 140px; font-size: 14px; }
+
+.hero-note {
+  font-size: 12px;
+  color: var(--text-hint);
+  margin-bottom: 0;
+}
+
+.hero-results {
+  margin-top: 28px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.hero-result-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: left;
+}
+.result-name { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.result-rank { font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; }
+
+.result-status {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+}
+.status-safe { background: var(--teal-light); color: var(--teal-dark); }
+.status-good { background: var(--green-light); color: var(--green-dark); }
+.status-borderline { background: var(--amber-light); color: var(--amber-dark); }
+.status-reach { background: var(--coral-light); color: var(--coral-dark); }
+
+.hero-results-note { font-size: 12px; color: var(--text-hint); }
+.hero-no-results { font-size: 14px; color: var(--text-secondary); }
+
+/* ─────────────────────────────────────────
+   SECTION 2 — Stats strip
+───────────────────────────────────────── */
+.stats-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 40px;
+}
+.stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--teal);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.stat-label { font-size: 13px; color: var(--text-secondary); }
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border-strong);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   SECTION 3 — How it works
+───────────────────────────────────────── */
+.how-it-works {
+  padding: 64px 32px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+.section-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.step-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 22px;
+  text-align: center;
+  transition: border-color .2s;
+}
+.step-card--active {
+  border-color: var(--teal);
+  background: var(--bg-white);
+}
+
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.step-num--active { background: var(--teal); color: #fff; }
+
+.step-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+/* ─────────────────────────────────────────
+   SECTION 4 — College explorer
+───────────────────────────────────────── */
+.college-explorer {
+  padding: 64px 32px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.explorer-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-pill {
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-white);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .15s;
+}
+.filter-pill:hover { border-color: var(--teal); color: var(--teal); }
+.filter-pill--active {
+  background: var(--teal-light);
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+.explorer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  max-width: 960px;
+  margin: 0 auto 14px;
+}
+
+.explorer-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  transition: border-color .15s;
+}
+.explorer-card:hover { border-color: var(--teal); }
+
+.explorer-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+.explorer-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.explorer-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
+
+.type-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.type-nit { background: var(--blue-light); color: var(--blue-dark); }
+.type-iiit { background: var(--purple-light); color: var(--purple-dark); }
+.type-other { background: var(--bg-surface); color: var(--text-secondary); }
+
+.explorer-ranks { display: flex; gap: 6px; flex-wrap: wrap; }
+.rank-chip {
+  font-size: 11px;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+}
+
+.explorer-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ─────────────────────────────────────────
+   SECTION 5 — Cutoff trend
+───────────────────────────────────────── */
+.cutoff-trend {
+  padding: 64px 32px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+}
+
+.trend-card {
+  max-width: 780px;
+  margin: 0 auto;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+}
+
+.trend-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.trend-college { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+.trend-round { font-size: 12px; color: var(--text-secondary); }
+.trend-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.cutoff-chart-svg { width: 100%; height: auto; display: block; }
+
+.chart-line { stroke: var(--teal); stroke-width: 2; }
+.chart-dot { fill: var(--teal); }
+.chart-year { font-size: 10px; fill: var(--text-hint); font-family: inherit; }
+.chart-rank { font-size: 9px; fill: var(--teal-mid); font-family: inherit; }
+
+.trend-note { font-size: 12px; color: var(--text-secondary); margin-top: 14px; }
+
+/* ─────────────────────────────────────────
+   SECTION 6 — Counselling guide
+───────────────────────────────────────── */
+.guide {
+  padding: 64px 32px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 680px) {
+  .guide-grid { grid-template-columns: 1fr; }
+}
+
+.guide-steps { display: flex; flex-direction: column; }
+
+.guide-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.guide-step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.guide-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.guide-num--active { background: var(--teal); color: #fff; }
+
+.guide-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 24px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.guide-step-content { padding-bottom: 20px; }
+.guide-step-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+.guide-step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+.guide-resources {
+  background: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: fit-content;
+}
+
+.resources-heading { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+
+.resource-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--bg-surface);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+}
+.resource-title { font-size: 13px; color: var(--text-primary); }
+
+.resource-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tag-teal { background: var(--teal-light); color: var(--teal-dark); }
+.tag-amber { background: var(--amber-light); color: var(--amber-dark); }
+
+/* ─────────────────────────────────────────
+   SECTION 7 — Testimonials
+───────────────────────────────────────── */
+.testimonials {
+  padding: 64px 32px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-quote {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 10px; }
+
+.author-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.author-detail { font-size: 12px; color: var(--text-secondary); }
+
+/* ─────────────────────────────────────────
+   Shared utilities
+───────────────────────────────────────── */
+.link-teal {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 500;
+}
+.link-teal:hover { text-decoration: underline; }
+
+/* ─────────────────────────────────────────
+   Footer
+───────────────────────────────────────── */
+.site-footer {
+  background: var(--bg-surface);
+  padding: 48px 32px 28px;
+  border-top: 1px solid var(--border);
+}
+.footer-brand { font-size: 16px; font-weight: 700; color: var(--text-primary); margin-bottom: 24px; }
+.footer-links {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.footer-links strong { font-size: 13px; color: var(--text-primary); display: block; margin-bottom: 10px; }
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; cursor: pointer; }
+.footer-links li:hover { color: var(--teal); }
+.footer-copy { font-size: 12px; color: var(--text-hint); }
+
+/* ─────────────────────────────────────────
+   Responsive
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .site-nav { padding: 0 16px; }
+  .nav-links { display: none; }
+  .hero { padding: 40px 16px 36px; }
+  .stats-strip { gap: 16px; padding: 20px 16px; }
+  .stat { padding: 0 16px; }
+  .stat-divider { display: none; }
+  .how-it-works,
+  .college-explorer,
+  .cutoff-trend,
+  .guide,
+  .testimonials { padding: 40px 16px; }
+  .trend-card { padding: 16px; }
+}

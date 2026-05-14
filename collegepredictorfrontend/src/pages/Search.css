@@ -1,0 +1,252 @@
+.search-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f6f6f6 0%, #ffffff 100%);
+  min-height: 100vh;
+}
+
+.search-wrapper {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.search-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.search-subtitle {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin: 0 0 30px 0;
+  font-weight: 500;
+}
+
+/* Search Box Styling */
+.search-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0090a8;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 144, 168, 0.1);
+}
+
+.search-input:hover {
+  border-color: #ccc;
+}
+
+.search-btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 120px;
+}
+
+.loading-spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 20px;
+}
+
+.results-count {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+  font-weight: 500;
+}
+
+.results-count strong {
+  color: #0090a8;
+  font-size: 16px;
+}
+
+/* Colleges List */
+.colleges-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.college-card {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.college-card:hover {
+  border-color: #0090a8;
+  box-shadow: 0 8px 24px rgba(0, 144, 168, 0.12);
+  transform: translateY(-4px);
+  background: #ffffff;
+}
+
+.college-header {
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.college-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  word-break: break-word;
+}
+
+.college-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #666;
+  min-width: 90px;
+}
+
+.detail-value {
+  color: #111;
+  font-weight: 500;
+  flex: 1;
+  word-break: break-word;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-message {
+  font-size: 18px;
+  color: #999;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-wrapper {
+    padding: 24px;
+  }
+
+  .search-title {
+    font-size: 28px;
+  }
+
+  .search-subtitle {
+    font-size: 14px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .colleges-list {
+    grid-template-columns: 1fr;
+  }
+
+  .college-card {
+    padding: 18px;
+  }
+
+  .college-name {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container {
+    padding: 20px 12px;
+  }
+
+  .search-wrapper {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .search-title {
+    font-size: 24px;
+  }
+
+  .detail-label {
+    font-size: 13px;
+    min-width: 75px;
+  }
+
+  .detail-item {
+    font-size: 13px;
+  }
+}
